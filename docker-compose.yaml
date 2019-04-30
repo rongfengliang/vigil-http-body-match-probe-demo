@@ -1,7 +1,7 @@
 version: "3"
 services: 
   app:
-    image: dockerimage.yonyou.com/library/vigil:v1.9.0
+    image: valeriansaliou/vigil:v1.9.0
     volumes: 
     - "./config.cfg:/etc/vigil.cfg"
     ports: 
