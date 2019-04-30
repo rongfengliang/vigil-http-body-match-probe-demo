@@ -1,0 +1,15 @@
+version: "3"
+services: 
+  app:
+    image: dockerimage.yonyou.com/library/vigil:v1.9.0
+    volumes: 
+    - "./config.cfg:/etc/vigil.cfg"
+    ports: 
+    - "9090:9090"
+  web:
+    image: openresty/openresty:alpine-fat
+    volumes: 
+    - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
+    - "./53c2e115-da65-47fd-8e6c-13bb95d3f2c6:/opt/53c2e115-da65-47fd-8e6c-13bb95d3f2c6"
+    ports: 
+    - "8080:8080"
